@@ -1,0 +1,108 @@
+Semantic HTML Tutorial
+
+Be sure to follow along with the code examples presented here!
+
+Semantic HTML is all about providing meaning to our content. 
+Let’s look at some content and think about how we could add meaning to it. 
+Study the content below:
+
+<!-- Main heading -->
+Lambda School
+
+<!-- Navigation -->
+Tracks
+About
+Blog
+Apply Now
+
+<!-- Secondary heading -->
+A Revolutionary New School
+That Invests in You
+
+<!-- Site content -->
+Lambda School is a 30 week, immersive program that gives you the tools and training you need to launch your new career—from the comfort of your own home.
+
+Step 1: Main Heading
+
+When someone is searching for Lambda School, 
+    they are most likely going to type “Lambda School” into the search bar.
+
+We need our content to be marked up so that search engines can successfully find Lambda School.
+    To do this, we can wrap our heading (or title) in a <h1> tag.
+
+<h1>Lambda School</h1>
+
+The <h1> tag is providing meaning to the search engine by informing any 
+    indexing tools that we want “Lambda School” to be most important.
+
+We are also telling the next developer that “Lambda School” is the most important content on the page.
+
+Let’s keep marking up our code by looking at the navigation content.
+
+Step 2: Header
+
+<h1>Lambda School</h1>
+
+<!-- Navigation -->
+Tracks
+About
+Blog
+Apply Now
+
+At this point, we want to define a header (upper portion) for our document. 
+We can use the <header> tag to wrap both the main heading (or title) and navigation items like this:
+
+<header>
+  <h1>Lambda School</h1>
+
+  <!-- Navigation -->
+  Tracks
+  About
+  Blog
+  Apply Now
+</header>
+
+Now that we have our header in place let’s finish marking the navigation items up using the <nav> tag with nested <a> elements:
+
+<header>
+  <h1>Lambda School</h1>
+  <nav>
+    <a href="#">Tracks</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+    <a href="#">Apply Now</a>
+  </nav>
+</header>
+
+By using the <nav> tag we are making it clear what the intent of that block of code is. 
+    The nested <a> tags don’t currently link anywhere so we can put
+    the # symbol in the href value to refresh the page for now.
+
+Step 3: Secondary Heading and Site Content Section
+
+Now that we have our main heading and navigation in place, we can look at the secondary heading and site content. 
+    Before we markup the code, take a look at the content and think: “How should I organize this?”
+
+<!-- Secondary heading -->
+A Revolutionary New School
+That Invests in You
+
+<!-- Site content -->
+Lambda School is a 30 week, immersive program that gives you the tools.
+
+The secondary heading and site content go together. We could use a <section> tag to organize both the secondary heading and site content together.
+
+We can also markup the secondary heading with a <h2>, and the site content could be a paragraph or <p> tag.
+
+<section>
+  <!-- Secondary heading -->
+  <h2>A Revolutionary New School
+  That Invests in You</h2>
+
+  <!-- Site content -->
+  <p>Lambda School is a 30 week, immersive program that gives you the tool.</p>
+</section>
+
+HTML has multiple heading tags. When we use them depends on what order we want the content to be understood by search engines.
+
+Using <h2> after <h1> tells the search engines that the secondary heading isn’t as important as the main heading.

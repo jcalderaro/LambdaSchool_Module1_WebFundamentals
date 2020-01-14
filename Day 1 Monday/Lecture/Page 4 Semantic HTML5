@@ -1,0 +1,39 @@
+Semantic HTML5
+
+The W3C uses the word recommended to describe the most up to date web standards. 
+    The current recommended standard for HTML markup is HTML5. HTML5 comes with more meaningful 
+    tags to better describe our code. We use the word semantic to describe tags with meaning.
+
+Some examples of semantic tags include:
+
+<h1>
+<p>
+<section>
+<nav>
+<header>
+<footer>
+
+Notice that you can quickly figure out what each tag listed should be described in HTML.   
+    The fact that you can read the tag and know more about its meaning instantly 
+    is a direct example of why we say it’s semantic HTML.
+
+Compare the semantic tags above with this list of non-semantic tags below:
+
+<div class=”main-content”></div>
+<div class=”nav”></div>
+<span class=”orange”></span>
+<div class=”footer”></div>
+
+Note, that while you can get information from the class names, 
+    you are at the mercy of the original developer’s naming convention, spelling, and meaning.
+
+At this point, we can see the advantage of semantic markup for web developers. 
+    The clarity and meaning should be found right in the tags. 
+    There is another large advantage in writing semantically correct code: 
+    computer algorithms consuming your code.
+
+Search engines are algorithms looking for meaning. 
+    If your code has a lot of divs without meaning, 
+    you could lose out on valuable search engine optimization ranking. 
+    Knowing that both humans and machines prefer semantic code, 
+    we should get some practice writing it and knowing when to use it.

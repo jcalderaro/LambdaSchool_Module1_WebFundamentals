@@ -1,0 +1,246 @@
+CSS Selectors
+
+To access an HTML tag for styling, we use selectors in CSS. 
+Selectors come with different specificity weights that can be used to layer on many styles.
+The weight of a selector has a significant impact on how we build our apps and web pages.
+Let’s look at a few of the important selectors used in everyday development:
+
+Universal Selector *
+There are occasions you would want to select every element on a web page. 
+The universal selector, sometimes called the wild card or star selector, does precisely that.
+
+Specificity Weight: Less specific than any selector.
+
+CSS Syntax example:
+* {
+  color: red;  
+}  
+
+Element Selectors <h1></h1>
+When styling elements, we are basically telling the browser:
+ “I want every single tag I specify to follow my styles.” 
+ This is more specific than the universal selector.
+
+Specificity Weight: More specific than universal less than everything else.
+
+HTML Syntax example:
+<h1>I'm a h1 element</h1> 
+
+CSS Syntax example:
+h1 {  
+  color: blue;  
+}  
+
+Class Selector .class
+Class selectors begin to introduce a heavier specificity compared to the element or universal selectors. 
+Classes allow us to select individual elements by placing a special attribute in our HTML. 
+We can use the same class over and over again on many elements. 
+This behavior is extremely powerful and allows designers and developers to be more efficient.
+
+Specificity Weight: More than universal and element, less than ID, inline, and important.
+
+HTML Syntax example:
+<h1 class="example-class">I'm a class</h1>  
+<h1 class="example-class">I'm a duplicate class</h1> 
+<div class="another-class">New class selector</div> 
+
+CSS Syntax example:
+.example-class {  
+  color: green;  
+  font-size: 16rem;  
+  text-align: center;  
+} 
+
+Multiple Classes
+Classes are unique in that we can have multiple classes in the same HTML attribute. This allows for layers of class specificity weight that we can control by using sibling selectors. The example below demonstrates how this might look.
+
+Specificity Weight: Same overall weight as a single class, but lowest class on the page wins.
+
+HTML Syntax example
+<h1 class="a b c d">I have 4 classes!</h1>  
+
+CSS Syntax example
+.a {  
+  color: green;  
+}  
+
+Pseudo-Classes
+Pseudo-classes are used when you may not have a set amount of elements, 
+but you still want to style them individually.
+
+For example, you are given a list of items in a store’s inventory. 
+That list of items grows and shrinks everyday with purchases and new items.
+
+Now let’s imagine that the last item in the inventory needs to update to a new color
+ to signify the end of the inventory. Without pseudo-classes, we couldn’t achieve that result.
+
+We could use something like li:last-child to always select the last child in an unordered 
+list to achieve our goal with the inventory.
+
+Specificity Weight:
+
+Same specificity weight as classes. More specific than universal and element.
+Less specific than ID, inline styles, and important.
+
+HTML Syntax example:
+<h1 class="normal">Normal class here</h1>  
+<h1 class="normal">Normal class here</h1>  
+<h1 class="normal">Psuedo class found here!</h1>  
+
+CSS Syntax example:
+h1:last-child {  
+  color: orange;  
+}  
+
+ID Selectors
+IDs are only allowed to be used once per HTML page. Use IDs for very specific reasons that can’t be accomplished using a class. Be mindful of where you use IDs as their specificity weight is heavier than most selectors.
+
+Specificity Weight:
+More than universal, element, pseudo-classes, and classes.
+Less than inline styles, and important.
+
+HTML Syntax example:
+<h1 id="example-id">I have an ID</h1>  
+
+CSS Syntax example:
+#example-id {  
+  color: gold;  
+}  
+
+ID Selectors
+
+IDs are only allowed to be used once per HTML page. Use IDs for very specific reasons that can’t be accomplished using a class. Be mindful of where you use IDs as their specificity weight is heavier than most selectors.
+
+Specificity Weight:
+More than universal, element, pseudo-classes, and classes.
+Less than inline styles, and important.
+HTML Syntax example:
+<h1 id="example-id">I have an ID</h1> 
+
+CSS Syntax example:
+#example-id {  
+  color: gold;  
+}  
+
+Specificity Heavy Weights
+The following items go beyond selector specificity and are in a heavyweight category. Using these items can cause issues in your code if you aren’t completely familiar with them. Be aware of them and avoid their use for everyday styling. Of course, they have a place in the CSS ecosystem, but be mindful of using them.
+
+3 Different Style Integrations
+You can introduce CSS styles into your HTML using 3 different approaches.
+
+Inline styles
+Embedded style tag in the HTML page
+Externally linked CSS file
+The standards the best approach change with the flow of new technology, but for now, we will say that external style sheets are the way to code. Why? Because both the inline styles and the style tag are more specific, and we want to control all our style specificity in one place as we learn. In the future, you may have cases where knowledge of all three come into play. It is recommended to know how all three work.
+
+Inline Styles
+Inline styles utilize the style attribute baked into every HTML element. Inline styles can be very useful with JavaScript libraries but should be avoided outside of that. Inline styles overwrite everything but !important.
+
+Specificity Weight:
+More than universal, element, pseudo-classes, classes, IDs
+Less than !important
+HTML Syntax example:
+<h1 style="color: red">Inline Styled Heading</h1>  
+
+Embedded Style Tag
+Inline styles were too cumbersome for early developers, so a style tag was introduced to the spec. The style tag houses everything that an external style sheet does but instead has it in the actual page. There are some big advantages to having a style tag embedded on the page.
+
+You won’t have an extra HTTP request going out to find your externally linked style pages
+You know exactly what is on that page and don’t have to look in external files to find them
+External style sheets are deemed as content blocking by some search engines, and you could lose search engine optimization rank because of this
+However, embedded style tags are tightly coupled to the page and not very reusable. Any embedded style tags also overwrite external style sheets with duplicate selectors. It’s wise to choose one approach and stick with it as you learn. For our time here at Lambda, we will focus on external style sheets.
+
+Specificity Weight:
+More than duplicate universal, element, pseudo-classes, classes, IDs
+Less than inline styles, !important
+HTML Syntax example:
+<style>  
+ h1 {  
+  color: red;  
+ }  
+</style>  
+
+
+
+Let’s get some practice writing out CSS selectors by using this HTML as a starting point:
+<div class="container"> 
+  <header>
+    <h1 class="main-heading">Lambda School</h1>
+    <nav>
+      <a href="#">Tracks</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a id="apply" href="#">Apply Now</a>
+    </nav>
+  </header>
+</div>
+
+Universal Selector
+If we wanted to style everything in our HTML to have a font-size of 16px, we could use the universal selector * like this:
+* {
+  font-size: 16px;
+}
+
+Let’s use an element selector to remove text-decoration from all our a tags:
+a {
+  text-decoration: none;
+}
+
+Class selectors allow us to target one element or many. Classes in CSS are the go-to for many apps and websites.
+Style the heading to have a font-size of 24px with a color of crimson;
+.main-heading {
+  font-size: 24px;
+  color: crimson;
+}
+
+Let’s style all our .nav-item classes to look like buttons, review the code below:
+.nav-item {
+  padding: 5px 20px;
+  background: lightgray;
+  border: 1px solid gray;
+  margin: 10px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  color: black;
+}
+
+We have an ID on the Apply Now link. We can use the ID to add a specific style helping us call out the button even more:
+#apply {
+  background: #125172;
+  color: white;
+}
+The ID overwrote our class styles for background and color. We are using everything else from our classes, 
+this is related to the cascade which you will learn more about soon.
+
+HTML Structure:
+<div class="parent">  
+  <p>Parent</p>  
+  <div class="child">  
+    <p>Child</p>  
+    <div class="grandchild">  
+      <p>Grandchild</p>  
+    </div>  
+  </div>  
+</div>  
+
+CSS:
+.parent {  
+  color: red;  
+}  
+
+Specificity Weight
+* < elements < classes, pseudo-classes, attributes < IDs < inline styles < !important
+
+CSS specificity begins with HTML structure. Before we write any CSS, study the HTML nesting below:
+<div class="container"> 
+  <header>
+    <h1 class="main-header">Lambda School</h1>
+    <nav>
+      <a href="#">Tracks</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Apply Now</a>
+    </nav>
+  </header>
+</div>
+We can see that there is a class of .container wrapping all of the other elements.

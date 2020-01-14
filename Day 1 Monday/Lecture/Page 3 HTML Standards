@@ -1,0 +1,27 @@
+HTML Standards
+
+To understand the use of HTML, we first need to understand it’s history. 
+    When the Internet was in its infancy, there were many organizations writing their own markup for their own communication. 
+    Company X would use specific tags that made logical sense to them while Company Y would write their own unique tags.
+
+As the Internet expanded to impact more people across more organizations and countries, 
+    a unification of meaning was needed. That unification is what we call the World Wide Web Consortium (W3C). 
+    The W3C was formed in 1994 to create international standards for the World Wide Web. 
+    We use the ever-changing W3C standards today. 
+    You can find the official standards of the W3C here: https://www.w3.org/standards///
+
+If we didn’t have standards for the web, we would end up with thousands of lines of markup to describe the same thing.
+    In fact, because browsers can render matching XML tags, we could experience this ourselves. Let’s look at an example:
+
+
+<lambdaSchool>My custom Lambda tag!</lambdaSchool>  
+
+The <lambdaSchool> tag renders correctly in the browser! We can even style our newly created tag:
+
+lambdaSchool {
+  color: red;
+}
+
+This is a small example of why we need standards when writing HTML. 
+    If we could write custom tags for everything, 
+    we would be in a state of constant confusion across development teams and organizations.

@@ -1,0 +1,26 @@
+<div> Tags Aren’t Bad
+
+In the example above, we shed a bit of bad light on using divs with classes, 
+    but the reality is that often, you need a div to get the job done. 
+    When do we use div tags? Whenever we don’t need to describe meaning. 
+    Using a div to create space, add structure, or style elements is just fine. 
+    The concept of using markup like this is called presentational HTML.
+
+Presentational HTML does not convey meaning. 
+    It is used to achieve something the designer or client wanted but perhaps doesn’t contain meaning.
+    An example of this would be:
+
+<section>
+  <div>
+    <p>Half the content here should go here.</p>
+  </div>
+  <div>
+    <p>The other half here should go here.</p>
+  </div>
+</section>
+
+Notice how we can use the <section> tag to wrap the content, 
+    but we could split the content into two halves using divs. 
+    Semantically we are still using <section>, and at the same time, 
+    we are using presentational <div> tags to split the content in half. 
+    We could then use CSS on our divs to split the content without hurting the semantic structure.
